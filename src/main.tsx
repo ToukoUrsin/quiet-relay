@@ -119,7 +119,16 @@ function App() {
     [liveBusy, setLiveBusy] = useState(false),
     [liveStatus, setLiveStatus] = useState("Not connected"),
     [liveParity, setLiveParity] = useState<boolean | null>(null);
-  const fileRef = useRef<HTMLInputElement>(null);
+  const fileRef = useRef<HTMLInputElement>(null),
+    inspectorRef = useRef<HTMLElement>(null);
+  // Selects an event for the microscope. On the stacked phone layout the
+  // microscope sits below the list, so bring it into view.
+  const inspect = (i: number) => {
+    setSelected(i);
+    setInspectTab("reason");
+    if (window.matchMedia("(max-width: 700px)").matches)
+      inspectorRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   const run = useMemo(
     () => replay(cases.slice(0, cursor), policy),
     [cases, policy, cursor],
@@ -655,10 +664,7 @@ function App() {
                     return (
                       <button
                         key={i}
-                        onClick={() => {
-                          setSelected(i);
-                          setInspectTab("reason");
-                        }}
+                        onClick={() => inspect(i)}
                         className={`event-row ${selected === i ? "selected" : ""} ${!d ? "pending" : ""}`}
                       >
                         <span className="event-index">
@@ -771,7 +777,7 @@ function App() {
                     className="stored-card"
                     key={e.id}
                     onClick={() =>
-                      setSelected(
+                      inspect(
                         cases.findIndex(
                           (c) => (c.event as NostrEvent).id === e.id,
                         ),
@@ -877,7 +883,7 @@ function App() {
               </span>
             </div>
           </section>
-          <aside className="inspector">
+          <aside className="inspector" ref={inspectorRef}>
             <div className="panel-title">
               <Fingerprint size={17} />
               <h3>Event microscope</h3>

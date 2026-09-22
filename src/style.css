@@ -1660,9 +1660,6 @@ footer button {
   .workspace-top h2 {
     font-size: 16px;
   }
-  .work-actions .subtle {
-    display: none;
-  }
   .method-modal {
     max-width: 720px;
   }
@@ -1679,7 +1676,8 @@ footer button {
   .topbar {
     height: 72px;
   }
-  .brand small {
+  .brand small,
+  .brand > span {
     display: none;
   }
   .top-actions .local {
@@ -1722,6 +1720,13 @@ footer button {
   }
   .work-actions {
     width: 100%;
+    flex-wrap: wrap;
+  }
+  /* Import stays reachable on phones: full-width row below the primary actions. */
+  .work-actions .subtle {
+    order: 1;
+    width: 100%;
+    font-size: 11px;
   }
   .work-actions .button {
     flex: 1;
