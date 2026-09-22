@@ -4,7 +4,13 @@
 
 A correctly signed event can still reveal a location, exceed a budget or try to withdraw somebody else's note. QuietRelay lets a relay operator experiment with those boundaries before changing a live service.
 
-This is an original, AI-assisted prototype prepared for the BOSS Battle Nostr / freedom-stack opportunity. Event eligibility, application and submission are separate; this repository does not claim acceptance or an award. All development is local at this stage.
+This is an original, AI-assisted prototype prepared for the BOSS Battle Nostr / freedom-stack opportunity. Event eligibility, application and submission are separate; this repository does not claim acceptance or an award. Development began September21,2026. The complete original commit history is being published on the same day after local code/package review; no earlier public-push history is claimed.
+
+## Demo and build status
+
+A 3–5-minute working-software demo is in production and will be linked here when published. The organizer confirmed solo/global eligibility and disclosed AI assistance by email on September21; portal registration and final submission are still outstanding.
+
+Day1 progress: original policy/protocol implementation, fixture signing, actual loopback server,21 passing tests and reproducible evidence packages. No prior weekly progress logs are claimed.
 
 ## Run
 
@@ -69,7 +75,7 @@ The workbench and server share the reducer so the wire test can expose transport
 - **Supported protocol subset.** NIP-01 wire flow/filters, replacement/addressable conventions and scoped NIP-09 deletion. No claim of full NIP coverage or validation of every kind's application semantics. Unknown filter fields are rejected. The `/lab/reset` HTTP endpoint is separate local test infrastructure, not a Nostr extension.
 - **Evidence is self-verifiable, not externally attested.** A digest identifies file content; anyone can create another internally consistent evidence file. Replay checks the claimed decisions, not who conducted the experiment.
 
-Primary specification links, dependency versions and protocol decisions are in [PROTOCOL.md](docs/PROTOCOL.md). A 2–3 minute actual-interaction film plan is in [DEMO.md](docs/DEMO.md). No demo video has been recorded or uploaded by this build task.
+Primary specification links, dependency versions and protocol decisions are in [PROTOCOL.md](docs/PROTOCOL.md). A 3–5 minute actual-interaction film plan is in [DEMO.md](docs/DEMO.md). No demo video has been recorded or uploaded by this build task.
 
 ## Authorship and license
 
