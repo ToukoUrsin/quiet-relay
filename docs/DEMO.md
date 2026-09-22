@@ -1,6 +1,6 @@
 # QuietRelay — actual-interaction film plan
 
-**Target: 3 minutes 50 seconds, English. Required final duration: 3–5 minutes.** This follows the organizer's September 21 clarification and BOSS Battle participant handbook. This is a plan; no film has been recorded by this build slice. When the finished film is verified, link or embed it near the top of the public README.
+**Target: 3 minutes 50 seconds, English. Required final duration: 3–5 minutes.** This follows the organizer's September 21 clarification and BOSS Battle participant handbook. The film was recorded on September 22 and runs **3:33** (213.1 s); see [Recorded film](#recorded-film) below. The README carries its link near the top.
 
 Run `npm run dev` and, in another terminal, `npm run relay`. Open http://127.0.0.1:4326/ and restore public fixtures. Capture actual interactions at about 1440×1000. Do not show private tabs, mail, accounts or keys. Preserve enough time for the viewer to inspect each result; no fabricated terminal/UI footage.
 
@@ -24,3 +24,25 @@ Three screenshot targets:
 3. Successful actual loopback exchange with the verified comparison and retained count.
 
 The public static sandbox can run without a server; the live transport scene requires the separate relay on the presenter device. If capture is remote-only, demonstrate the local command and its actual captured results with truthful labeling. Check the final runtime is **at least 180 and no more than 300 seconds**, and keep the film link near the top of README as the organizer requires.
+
+## Recorded film
+
+`media/quietrelay-demo.mp4` (1920×1080 H.264/AAC, 3:33, not committed; `*.mp4` is ignored) with captions in `media/quietrelay-demo.en.srt` and upload copy in [media/YOUTUBE.md](../media/YOUTUBE.md).
+
+- **UI footage** is one continuous Playwright `recordVideo` capture of the running dev server at 1280×720, upscaled to 1080p. Every click is a real interaction; a small dot overlay shows where the automated pointer is. Pauses are the idle app, not frozen or edited frames.
+- **Terminal segments** run real commands in the repository (`npm run relay`, `curl …/health`, `npm run verify` on the evidence file exported moments earlier in the film, `npm test`) and stream their actual stdout into a terminal-styled page. The relay started there is the one the browser's live test talks to.
+- **Narration** is an ElevenLabs stock synthetic voice reading a script written for this film.
+- Differences from the plan: 3:33 instead of 3:50, and the two terminal segments are added before the live relay test and after the evidence import.
+
+| Chapter | Content |
+|---|---|
+| 0:00 | Signed note that still exposes a location |
+| 0:22 | Same event under Open and Quiet |
+| 0:43 | Policy diff across presets |
+| 1:05 | Signing and tampering experiment |
+| 1:28 | Starting the loopback relay |
+| 1:41 | Live WebSocket exchange |
+| 2:09 | Withdrawal, foreign deletion, ephemeral delivery |
+| 2:33 | Export and re-import evidence |
+| 2:47 | CLI verification and tests |
+| 3:10 | Scope and limits |

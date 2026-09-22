@@ -2,15 +2,21 @@
 
 **Understand what gets through.** A local Nostr policy workbench that makes relay decisions visible, reproducible and testable against a real WebSocket server.
 
+**Demo video: (link pending upload)** · 3:33 end-to-end walkthrough of the actual UI, loopback relay and CLI verification. English captions and chapters in [media/](media/YOUTUBE.md).
+
+![Quiet policy holding a signed note that exposes a location](media/01-quiet-location-held.png)
+
 A correctly signed event can still reveal a location, exceed a budget or try to withdraw somebody else's note. QuietRelay lets a relay operator experiment with those boundaries before changing a live service.
 
 This is an original, AI-assisted prototype prepared for the BOSS Battle Nostr / freedom-stack opportunity. Event eligibility, application and submission are separate; this repository does not claim acceptance or an award. Development began September21,2026. The complete original commit history is being published on the same day after local code/package review; no earlier public-push history is claimed.
 
 ## Demo and build status
 
-A 3–5-minute working-software demo is in production and will be linked here when published. The organizer confirmed solo/global eligibility and disclosed AI assistance by email on September21; portal registration and final submission are still outstanding.
+The 3:33 demo film (linked above) was recorded on September22 from the running app with Playwright, including the real loopback relay exchange and real terminal commands; narration is an ElevenLabs stock synthetic voice. The organizer confirmed solo/global eligibility and disclosed AI assistance by email on September21; portal registration and final submission are still outstanding.
 
 Day1 progress: original policy/protocol implementation, fixture signing, actual loopback server,21 passing tests and reproducible evidence packages. No prior weekly progress logs are claimed.
+
+Day2 progress (September22): real-browser QA at 1440×1000 and 390×844 including the live relay flow, fixes for swapped Open/Quiet columns in the policy diff and an evidence import that was hidden on phones, three screenshots and the demo film.
 
 ## Run
 
@@ -75,7 +81,11 @@ The workbench and server share the reducer so the wire test can expose transport
 - **Supported protocol subset.** NIP-01 wire flow/filters, replacement/addressable conventions and scoped NIP-09 deletion. No claim of full NIP coverage or validation of every kind's application semantics. Unknown filter fields are rejected. The `/lab/reset` HTTP endpoint is separate local test infrastructure, not a Nostr extension.
 - **Evidence is self-verifiable, not externally attested.** A digest identifies file content; anyone can create another internally consistent evidence file. Replay checks the claimed decisions, not who conducted the experiment.
 
-Primary specification links, dependency versions and protocol decisions are in [PROTOCOL.md](docs/PROTOCOL.md). A 3–5 minute actual-interaction film plan is in [DEMO.md](docs/DEMO.md). No demo video has been recorded or uploaded by this build task.
+Primary specification links, dependency versions and protocol decisions are in [PROTOCOL.md](docs/PROTOCOL.md). The film plan and how the recorded film follows it are in [DEMO.md](docs/DEMO.md).
+
+| Policy diff: same signed inputs, three presets | Actual loopback exchange, verified against the sandbox      |
+| ---------------------------------------------- | ----------------------------------------------------------- |
+| ![Policy diff](media/02-policy-diff.png)       | ![Live loopback relay](media/03-live-loopback-verified.png) |
 
 ## Authorship and license
 

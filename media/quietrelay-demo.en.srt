@@ -1,0 +1,186 @@
+1
+00:00:00,650 --> 00:00:05,520
+This is QuietRelay, a local policy workbench for
+Nostr relay operators.
+
+2
+00:00:05,620 --> 00:00:08,076
+A valid signature is only the beginning.
+
+3
+00:00:08,176 --> 00:00:14,914
+This note is genuinely signed, but its tags
+expose a location, a relationship and a relay destination.
+
+4
+00:00:15,014 --> 00:00:19,405
+These are public synthetic fixtures, not
+anyone's private messages.
+
+5
+00:00:22,651 --> 00:00:24,766
+Here is the exact signed event.
+
+6
+00:00:24,866 --> 00:00:27,806
+The input and its signature never change.
+
+7
+00:00:27,906 --> 00:00:30,877
+Under the Open policy, the note is admitted.
+
+8
+00:00:30,977 --> 00:00:33,740
+Switch back to Quiet, and it is held.
+
+9
+00:00:33,840 --> 00:00:36,200
+It never enters the subscriber feed.
+
+10
+00:00:36,300 --> 00:00:41,081
+We are changing a visible policy, not rewriting
+evidence to force a result.
+
+11
+00:00:44,153 --> 00:00:50,792
+The policy diff replays all twenty fixture events
+independently under each preset, from an empty store.
+
+12
+00:00:50,892 --> 00:00:54,682
+Quiet admits eleven, Open fifteen, Strict five.
+
+13
+00:00:54,782 --> 00:01:02,675
+Limits on kinds, tags, age, bytes and arrival rate are
+explicit, so an authentic message can still fall outside the contract.
+
+14
+00:01:05,652 --> 00:01:07,375
+Now a new experiment.
+
+15
+00:01:07,475 --> 00:01:15,825
+Signing uses real BIP-340 Schnorr signatures, with deliberately
+public demo identities that must never become real accounts.
+
+16
+00:01:15,925 --> 00:01:19,361
+I ask the workbench to change the content after
+signing.
+
+17
+00:01:19,461 --> 00:01:26,078
+The canonical event hash no longer matches the id, so
+the integrity check fails before any policy can admit it.
+
+18
+00:01:29,154 --> 00:01:30,782
+Next, the real wire.
+
+19
+00:01:30,882 --> 00:01:33,704
+In a terminal, I start the loopback relay.
+
+20
+00:01:33,804 --> 00:01:38,388
+It listens only on the local machine, and never
+contacts an upstream relay.
+
+21
+00:01:41,655 --> 00:01:45,254
+Back in the browser, I restore the fixtures and
+run the live test.
+
+22
+00:01:45,354 --> 00:01:52,616
+These are frames captured from that separate process: EVENT
+and REQ going out, OK and EVENT coming back.
+
+23
+00:01:52,716 --> 00:01:55,887
+Every acknowledgement matches the sandbox
+prediction.
+
+24
+00:01:55,987 --> 00:02:02,494
+Under Quiet, eleven events are admitted, and
+a fresh subscriber snapshot returns seven stored records.
+
+25
+00:02:02,594 --> 00:02:06,075
+Replacements and an ephemeral event explain the
+difference.
+
+26
+00:02:09,657 --> 00:02:13,117
+This note's author later asks the relay to
+withdraw it.
+
+27
+00:02:13,217 --> 00:02:17,498
+It is removed locally, and the deletion request
+stays as a tombstone.
+
+28
+00:02:17,598 --> 00:02:21,324
+When someone else tries to erase a note, the
+request is rejected.
+
+29
+00:02:21,424 --> 00:02:25,564
+The ephemeral signal reached live subscribers,
+but was never stored.
+
+30
+00:02:25,664 --> 00:02:30,455
+None of this promises erasure from other relays,
+or from readers who kept a copy.
+
+31
+00:02:33,659 --> 00:02:40,763
+Everything exports as one evidence file: inputs, arrival
+times, policy and outcomes, with no signing keys.
+
+32
+00:02:40,863 --> 00:02:44,844
+Importing it checks the digest and reruns every
+decision.
+
+33
+00:02:48,161 --> 00:02:50,571
+The same file verifies from the command line.
+
+34
+00:02:50,671 --> 00:02:58,622
+The test suite covers the official BIP-340 vectors,
+independent hashing, forged evidence, and a real WebSocket exchange.
+
+35
+00:02:58,722 --> 00:03:00,908
+All twenty-one tests pass.
+
+36
+00:03:01,008 --> 00:03:07,752
+A digest is not an outside attestation, but replay
+shows that the stated outputs follow from the stated inputs.
+
+37
+00:03:11,163 --> 00:03:16,861
+QuietRelay is a usable policy lab, with a
+bounded local relay and reproducible tests.
+
+38
+00:03:16,961 --> 00:03:22,566
+It does not detect every kind of private
+information, or implement every Nostr extension.
+
+39
+00:03:22,666 --> 00:03:27,148
+No wallet, no inference API, and no upstream
+publication.
+
+40
+00:03:27,248 --> 00:03:29,778
+Just a clear view of what gets through.
