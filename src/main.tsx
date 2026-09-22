@@ -727,9 +727,9 @@ function App() {
                   <thead>
                     <tr>
                       <th>Event</th>
-                      <th>Open</th>
-                      <th>Quiet</th>
-                      <th>Strict</th>
+                      {Object.entries(comparisons).map(([key, r]) => (
+                        <th key={key}>{r.policy.name}</th>
+                      ))}
                     </tr>
                   </thead>
                   <tbody>
