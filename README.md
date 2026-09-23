@@ -2,7 +2,7 @@
 
 **Understand what gets through.** A local Nostr policy workbench that makes relay decisions visible, reproducible and testable against a real WebSocket server.
 
-**Demo video: (link pending upload)** · 3:33 end-to-end walkthrough of the actual UI, loopback relay and CLI verification. English captions and chapters in [media/](media/YOUTUBE.md).
+**[Demo video (3:33)](https://youtu.be/D7HTGdRcIfg)** · 3:33 end-to-end walkthrough of the actual UI, loopback relay and CLI verification. English captions and chapters in [media/](media/YOUTUBE.md).
 
 ![Quiet policy holding a signed note that exposes a location](media/01-quiet-location-held.png)
 
