@@ -12,7 +12,7 @@ This is an original, AI-assisted prototype prepared for the BOSS Battle Nostr / 
 
 ## Demo and build status
 
-The 3:33 demo film (linked above) was recorded on September22 from the running app with Playwright, including the real loopback relay exchange and real terminal commands; narration is an ElevenLabs stock synthetic voice. The organizer confirmed solo/global eligibility and disclosed AI assistance by email on September21; portal registration and final submission are still outstanding.
+The 3:33 demo film (linked above) was recorded on September22 from the running app with Playwright, including the real loopback relay exchange and real terminal commands; narration is an ElevenLabs stock synthetic voice. The organizer confirmed solo/global eligibility and disclosed AI assistance by email on September21. Submitted to BOSS Battle on Devfolio (Freedom Stack track) on September22: https://devfolio.co/projects/quietrelay-5f23
 
 Day1 progress: original policy/protocol implementation, fixture signing, actual loopback server,21 passing tests and reproducible evidence packages. No prior weekly progress logs are claimed.
 
